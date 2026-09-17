@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Remotes -->
+  <remote name="gh" fetch="https://github.com/" />
+  <remote name="gl" fetch="https://gitlab.com/" />
+
+  <!-- Device trees -->
+  <project path="device/xiaomi/dash" name="xiaomi-mt6991/device_xiaomi_dash" remote="gh" revision="bka" />
+  <project path="device/xiaomi/dash-miuicamera" name="xiaomi-mt6991/device_xiaomi_dash-miuicamera" remote="gh" revision="bka" />
+
+  <!-- Vendor blobs -->
+  <project path="vendor/xiaomi/dash" name="xiaomi-mt6991/vendor_xiaomi_dash" remote="gl" revision="bka" />
+  <project path="vendor/xiaomi/dash-miuicamera" name="xiaomi-mt6991/vendor_xiaomi_dash-miuicamera" remote="gl" revision="bka" />
+
+  <!-- Kernel -->
+  <project path="device/xiaomi/dash-kernel" name="xiaomi-mt6991/device_xiaomi_dash-kernel" remote="gh" revision="bka" />
+
+  <!-- Hardware -->
+  <project path="hardware/mediatek" name="xiaomi-mt6991/hardware_mediatek" remote="gh" revision="bka" />
+  <project path="hardware/xiaomi" name="xiaomi-mt6991/hardware_xiaomi" remote="gh" revision="bka" />
+
+  <!-- Sepolicy -->
+  <project path="device/mediatek/sepolicy_vndr" name="xiaomi-mt6991/device_mediatek_sepolicy_vndr" remote="gh" revision="bka" />
+
+  <!-- Vendor keys -->
+  <project path="vendor/evolution-priv/keys" name="xiaomi-mt6991/vendor_evolution-priv_keys" remote="gh" revision="bka" />
+
+  <!-- Dolby -->
+  <project path="packages/apps/LunarisDolby" name="xiaomi-mt6991/packages_apps_LunarisDolby" remote="gh" revision="bka" />
+
+  <!-- Patches -->
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_vibrator" />
+  <project path="vendor/qcom/opensource/vibrator" name="xiaomi-mt6991/vendor_qcom_opensource_vibrator" remote="gh" revision="bka" />
+</manifest>
