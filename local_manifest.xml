@@ -15,6 +15,10 @@
   <!-- Kernel -->
   <project path="device/xiaomi/dash-kernel" name="xiaomi-mt6991/device_xiaomi_dash-kernel" remote="gh" revision="bka" />
 
+  <!-- Wi-Fi -->
+  <remove-project name="LineageOS/android_external_wpa_supplicant_8" />
+  <project path="external/wpa_supplicant_8" name="xiaomi-mt6991/external_wpa_supplicant_8" remote="gh" />
+
   <!-- Hardware -->
   <project path="hardware/mediatek" name="xiaomi-mt6991/hardware_mediatek" remote="gh" revision="bka" />
   <project path="hardware/xiaomi" name="xiaomi-mt6991/hardware_xiaomi" remote="gh" revision="bka" />
