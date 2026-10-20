@@ -12,6 +12,9 @@
   <project path="vendor/xiaomi/dash" name="xiaomi-mt6991/vendor_xiaomi_dash" remote="gl" revision="bka" />
   <project path="vendor/xiaomi/dash-miuicamera" name="xiaomi-mt6991/vendor_xiaomi_dash-miuicamera" remote="gl" revision="bka" />
 
+  <!-- Platform build/kernel (provides bazel.sh, gettop.sh, prebuilts config) -->
+  <project path="build/kernel" name="LineageOS/android_kernel_build" remote="github" revision="lineage-23.0" />
+
   <!-- Kernel: source-built (Kleaf) repos. The Kleaf workspace root is kernel/xiaomi/dash. -->
   <project path="kernel/xiaomi/dash/kernel-6.6"
            name="Content-Creation-Club/android_kernel_xiaomi_dash"
