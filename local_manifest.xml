@@ -18,10 +18,8 @@
     <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
   </project>
 
-  <!-- Required prebuilts for Kleaf build (from AOSP android-17.0.0_r1, not in LineageOS 24.0 manifest) -->
+  <!-- Required prebuilts for Kleaf build (only bazel/linux-x86_64 is missing in Evolution-X/LineageOS) -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="linux,pdk" clone-depth="1" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk,sysui-studio" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk,sysui-studio" clone-depth="1" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="aosp" revision="main-kernel" groups="ddk" clone-depth="1" />
 
   <!-- Kernel: source-built (Kleaf) repos. The Kleaf workspace root is kernel/xiaomi/dash. -->
