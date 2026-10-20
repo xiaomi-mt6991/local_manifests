@@ -18,10 +18,7 @@
     <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
   </project>
 
-  <!-- Required prebuilts for Kleaf build (from platform manifest, groups=pdk,linux) -->
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" remote="aosp" revision="refs/tags/android-16.0.0_r1" groups="linux,pdk" clone-depth="1" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" remote="aosp" revision="refs/tags/android-16.0.0_r1" groups="pdk,sysui-studio" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" revision="refs/tags/android-16.0.0_r1" groups="pdk,sysui-studio" clone-depth="1" />
+  <!-- Required prebuilts for Kleaf build: kernel-build-tools (not in platform manifest by default) -->
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="aosp" revision="main-kernel" groups="ddk" clone-depth="1" />
 
   <!-- Kernel: source-built (Kleaf) repos. The Kleaf workspace root is kernel/xiaomi/dash. -->
