@@ -12,8 +12,42 @@
   <project path="vendor/xiaomi/dash" name="xiaomi-mt6991/vendor_xiaomi_dash" remote="gl" revision="bka" />
   <project path="vendor/xiaomi/dash-miuicamera" name="xiaomi-mt6991/vendor_xiaomi_dash-miuicamera" remote="gl" revision="bka" />
 
-  <!-- Kernel -->
-  <project path="device/xiaomi/dash-kernel" name="xiaomi-mt6991/device_xiaomi_dash-kernel" remote="gh" revision="bka" />
+  <!-- Kernel: source-built (Kleaf) repos. The Kleaf workspace root is kernel/xiaomi/dash. -->
+  <project path="kernel/xiaomi/dash/kernel-6.6"
+           name="Content-Creation-Club/android_kernel_xiaomi_dash"
+           remote="gh" revision="dash-w-oss" />
+  <project path="kernel/xiaomi/dash/kernel_device_modules-6.6"
+           name="Content-Creation-Club/android_kernel_xiaomi_dash_device_modules"
+           remote="gh" revision="dash-w-oss" />
+  <project path="kernel/xiaomi/dash/build/kernel"
+           name="Content-Creation-Club/android_kernel_xiaomi_dash_build"
+           remote="gh" revision="dash-w-oss" />
+  <project path="kernel/xiaomi/dash/build/bazel_mgk_rules"
+           name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules"
+           remote="gh" revision="lineage-23.2" />
+  <project path="kernel/xiaomi/dash/vendor/mediatek/kernel_modules"
+           name="Content-Creation-Club/android_kernel_xiaomi_dash_mtk_modules"
+           remote="gh" revision="dash-w-oss" />
+
+  <!-- Required symlinks inside the Kleaf workspace (kernel/xiaomi/dash) per
+       build/kernel/kleaf/docs/impl.md:302: WORKSPACE → mgk_rules/kleaf/bazel.WORKSPACE,
+       .bazelrc → build/kernel/kleaf/common.bazelrc. -->
+  <project path="kernel/xiaomi/dash/WORKSPACE"
+           name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules"
+           remote="gh" revision="lineage-23.2">
+    <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
+  </project>
+  <project path="kernel/xiaomi/dash/.bazelrc"
+           name="Content-Creation-Club/android_kernel_xiaomi_dash_build"
+           remote="gh" revision="dash-w-oss">
+    <linkfile src="kleaf/common.bazelrc" dest=".bazelrc" />
+  </project>
+
+  <!-- Prebuilt kernel modules (fallback for dio_dma_mapper.ko, and the 7 modules
+       the dash.config disables). Keeps stock partition layout intact. -->
+  <project path="device/xiaomi/dash-kernel"
+           name="xiaomi-mt6991/device_xiaomi_dash-kernel"
+           remote="gh" revision="cnb" />
 
   <!-- Hardware -->
   <project path="hardware/mediatek" name="xiaomi-mt6991/hardware_mediatek" remote="gh" revision="bka" />
