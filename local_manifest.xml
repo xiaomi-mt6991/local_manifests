@@ -2,6 +2,7 @@
 <manifest>
   <remote name="gh" fetch="https://github.com/" />
   <remote name="gl" fetch="https://gitlab.com/" />
+  <remote name="aosp" fetch="https://android.googlesource.com" />
 
   <!-- Missing prebuilts -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" remote="aosp" revision="main" groups="linux,pdk" clone-depth="1" />
