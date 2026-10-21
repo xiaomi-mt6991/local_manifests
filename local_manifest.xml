@@ -14,18 +14,18 @@
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" remote="aosp" revision="main" groups="linux,pdk" clone-depth="1" />
 
   <!-- External dependencies for Kleaf (NOT in Evolution-X default.xml) -->
-  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_license" name="platform/external/bazelbuild-rules_license" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_rust" name="platform/external/bazelbuild-rules_rust" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_java" name="platform/external/bazelbuild-rules_java" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_cc" name="platform/external/bazelbuild-rules_cc" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_android" name="platform/external/bazelbuild-rules_android" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_go" name="platform/external/bazelbuild-rules_go" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-rules_testing" name="platform/external/bazelbuild-rules_testing" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
-  <project path="external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_license" name="platform/external/bazelbuild-rules_license" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_rust" name="platform/external/bazelbuild-rules_rust" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_java" name="platform/external/bazelbuild-rules_java" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_cc" name="platform/external/bazelbuild-rules_cc" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_android" name="platform/external/bazelbuild-rules_android" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_go" name="platform/external/bazelbuild-rules_go" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_testing" name="platform/external/bazelbuild-rules_testing" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
 
   <!-- Kernel: source-built (Kleaf) repos -->
   <project path="kernel/xiaomi/dash/kernel-6.6" name="Content-Creation-Club/android_kernel_xiaomi_dash" remote="gh" revision="dash-w-oss" />
