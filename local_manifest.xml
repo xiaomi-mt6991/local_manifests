@@ -2,12 +2,8 @@
 <manifest>
   <remote name="gh" fetch="https://github.com/" />
   <remote name="gl" fetch="https://gitlab.com/" />
-  <remote name="aosp" fetch="https://android.googlesource.com" />
 
-  <project path="device/xiaomi/dash" name="xiaomi-mt6991/device_xiaomi_dash" remote="gh" revision="bka" />
-  <project path="device/xiaomi/dash-miuicamera" name="xiaomi-mt6991/device_xiaomi_dash-miuicamera" remote="gh" revision="bka" />
-  <project path="vendor/xiaomi/dash" name="xiaomi-mt6991/vendor_xiaomi_dash" remote="gl" revision="bka" />
-  <project path="vendor/xiaomi/dash-miuicamera" name="xiaomi-mt6991/vendor_xiaomi_dash-miuicamera" remote="gl" revision="bka" />
+  <!-- Only add what's NOT in Evolution-X default.xml -->
 
   <!-- Platform build/kernel (Kleaf tooling) -->
   <project path="build/kernel" name="kernel/build" remote="aosp" revision="main" groups="ddk">
@@ -49,16 +45,7 @@
   <!-- Prebuilt kernel modules (fallback) -->
   <project path="device/xiaomi/dash-kernel" name="xiaomi-mt6991/device_xiaomi_dash-kernel" remote="gh" revision="cnb" />
 
-  <project path="device/xiaomi/dash" name="xiaomi-mt6991/device_xiaomi_dash" remote="gh" revision="bka" />
-  <project path="device/xiaomi/dash-miuicamera" name="xiaomi-mt6991/device_xiaomi_dash-miuicamera" remote="gh" revision="bka" />
-  <project path="vendor/xiaomi/dash" name="xiaomi-mt6991/vendor_xiaomi_dash" remote="gl" revision="bka" />
-  <project path="vendor/xiaomi/dash-miuicamera" name="xiaomi-mt6991/vendor_xiaomi_dash-miuicamera" remote="gl" revision="bka" />
-  <project path="hardware/mediatek" name="xiaomi-mt6991/hardware_mediatek" remote="gh" revision="bka" />
-  <project path="hardware/xiaomi" name="xiaomi-mt6991/hardware_xiaomi" remote="gh" revision="bka" />
-  <project path="device/mediatek/sepolicy_vndr" name="xiaomi-mt6991/device_mediatek_sepolicy_vndr" remote="gh" revision="bka" />
-  <project path="vendor/evolution-priv/keys" name="xiaomi-mt6991/vendor_evolution-priv_keys" remote="gh" revision="bka" />
-  <project path="packages/apps/LunarisDolby" name="xiaomi-mt6991/packages_apps_LunarisDolby" remote="gh" revision="bka" />
-
+  <!-- Patches (overrides) -->
   <remove-project name="LineageOS/android_external_wpa_supplicant_8" />
   <project path="external/wpa_supplicant_8" name="xiaomi-mt6991/external_wpa_supplicant_8" remote="gh" revision="bka" />
   <remove-project name="LineageOS/android_hardware_nxp_nfc" />
