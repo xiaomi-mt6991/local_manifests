@@ -3,14 +3,6 @@
   <remote name="gh" fetch="https://github.com/" />
   <remote name="gl" fetch="https://gitlab.com/" />
 
-  <!-- Only add what's NOT in Evolution-X default.xml -->
-
-  <!-- Platform build/kernel (Kleaf tooling) -->
-  <project path="build/kernel" name="kernel/build" remote="aosp" revision="main" groups="ddk">
-    <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
-    <linkfile src="kleaf/common.bazelrc" dest=".bazelrc" />
-  </project>
-
   <!-- Missing prebuilts -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" remote="aosp" revision="main" groups="linux,pdk" clone-depth="1" />
 
@@ -27,6 +19,11 @@
   <project path="external/bazelbuild-rules_testing" name="platform/external/bazelbuild-rules_testing" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
   <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
   <project path="external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" remote="aosp" revision="main" groups="pdk" clone-depth="1" />
+
+  <!-- Platform build/kernel (Kleaf tooling) -->
+  <project path="build/kernel" name="kernel/build" remote="aosp" revision="main" groups="ddk">
+    <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
+  </project>
 
   <!-- Kernel: source-built (Kleaf) repos -->
   <project path="kernel/xiaomi/dash/kernel-6.6" name="Content-Creation-Club/android_kernel_xiaomi_dash" remote="gh" revision="dash-w-oss" />
