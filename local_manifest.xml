@@ -1,77 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Remotes -->
   <remote name="gh" fetch="https://github.com/" />
   <remote name="gl" fetch="https://gitlab.com/" />
   <remote name="aosp" fetch="https://android.googlesource.com" />
 
-  <!-- Device trees -->
   <project path="device/xiaomi/dash" name="xiaomi-mt6991/device_xiaomi_dash" remote="gh" revision="bka" />
   <project path="device/xiaomi/dash-miuicamera" name="xiaomi-mt6991/device_xiaomi_dash-miuicamera" remote="gh" revision="bka" />
-
-  <!-- Vendor blobs -->
   <project path="vendor/xiaomi/dash" name="xiaomi-mt6991/vendor_xiaomi_dash" remote="gl" revision="bka" />
   <project path="vendor/xiaomi/dash-miuicamera" name="xiaomi-mt6991/vendor_xiaomi_dash-miuicamera" remote="gl" revision="bka" />
 
-  <!-- Platform build/kernel (provides tools/bazel wrapper from kernel/build) -->
+  <!-- Platform build/kernel (Kleaf tooling) -->
   <project path="build/kernel" name="kernel/build" remote="aosp" revision="main" groups="ddk">
     <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
   </project>
 
-  <!-- Required prebuilts for Kleaf build (only bazel/linux-x86_64 is missing in Evolution-X) -->
+  <!-- Missing prebuilts -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" remote="aosp" revision="main" groups="linux,pdk" clone-depth="1" />
 
-  <!-- Kernel: source-built (Kleaf) repos. The Kleaf workspace root is kernel/xiaomi/dash. -->
-  <project path="kernel/xiaomi/dash/kernel-6.6"
-           name="Content-Creation-Club/android_kernel_xiaomi_dash"
-           remote="gh" revision="dash-w-oss" />
-  <project path="kernel/xiaomi/dash/kernel_device_modules-6.6"
-           name="Content-Creation-Club/android_kernel_xiaomi_dash_device_modules"
-           remote="gh" revision="dash-w-oss" />
-  <project path="kernel/xiaomi/dash/build/kernel"
-           name="Content-Creation-Club/android_kernel_xiaomi_dash_build"
-           remote="gh" revision="dash-w-oss" />
-  <project path="kernel/xiaomi/dash/build/bazel_mgk_rules"
-           name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules"
-           remote="gh" revision="lineage-23.2" />
-  <project path="kernel/xiaomi/dash/vendor/mediatek/kernel_modules"
-           name="Content-Creation-Club/android_kernel_xiaomi_dash_mtk_modules"
-           remote="gh" revision="dash-w-oss" />
+  <!-- External dependencies for Kleaf (NOT in Evolution-X default.xml) -->
+  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_license" name="platform/external/bazelbuild-rules_license" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_rust" name="platform/external/bazelbuild-rules_rust" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_java" name="platform/external/bazelbuild-rules_java" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_cc" name="platform/external/bazelbuild-rules_cc" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_android" name="platform/external/bazelbuild-rules_android" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_go" name="platform/external/bazelbuild-rules_go" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-rules_testing" name="platform/external/bazelbuild-rules_testing" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
+  <project path="external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" remote="aosp" revision="refs/tags/android-17.0.0_r1" groups="pdk" clone-depth="1" />
 
-  <!-- Required symlinks inside the Kleaf workspace (kernel/xiaomi/dash) per
-       build/kernel/kleaf/docs/impl.md:302: WORKSPACE → mgk_rules/kleaf/bazel.WORKSPACE,
-       .bazelrc → build/kernel/kleaf/common.bazelrc. -->
-  <project path="kernel/xiaomi/dash/WORKSPACE"
-           name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules"
-           remote="gh" revision="lineage-23.2">
+  <!-- Kernel: source-built (Kleaf) repos -->
+  <project path="kernel/xiaomi/dash/kernel-6.6" name="Content-Creation-Club/android_kernel_xiaomi_dash" remote="gh" revision="dash-w-oss" />
+  <project path="kernel/xiaomi/dash/kernel_device_modules-6.6" name="Content-Creation-Club/android_kernel_xiaomi_dash_device_modules" remote="gh" revision="dash-w-oss" />
+  <project path="kernel/xiaomi/dash/build/kernel" name="Content-Creation-Club/android_kernel_xiaomi_dash_build" remote="gh" revision="dash-w-oss" />
+  <project path="kernel/xiaomi/dash/build/bazel_mgk_rules" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2" />
+  <project path="kernel/xiaomi/dash/vendor/mediatek/kernel_modules" name="Content-Creation-Club/android_kernel_xiaomi_dash_mtk_modules" remote="gh" revision="dash-w-oss" />
+
+  <!-- Required symlinks inside Kleaf workspace -->
+  <project path="kernel/xiaomi/dash/WORKSPACE" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2">
     <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
   </project>
-  <project path="kernel/xiaomi/dash/.bazelrc"
-           name="Content-Creation-Club/android_kernel_xiaomi_dash_build"
-           remote="gh" revision="dash-w-oss">
+  <project path="kernel/xiaomi/dash/.bazelrc" name="Content-Creation-Club/android_kernel_xiaomi_dash_build" remote="gh" revision="dash-w-oss">
     <linkfile src="kleaf/common.bazelrc" dest=".bazelrc" />
   </project>
 
-  <!-- Prebuilt kernel modules (fallback for dio_dma_mapper.ko, and the 7 modules
-       the dash.config disables). Keeps stock partition layout intact. -->
-  <project path="device/xiaomi/dash-kernel"
-           name="xiaomi-mt6991/device_xiaomi_dash-kernel"
-           remote="gh" revision="cnb" />
+  <!-- Prebuilt kernel modules (fallback) -->
+  <project path="device/xiaomi/dash-kernel" name="xiaomi-mt6991/device_xiaomi_dash-kernel" remote="gh" revision="cnb" />
 
-  <!-- Hardware -->
+  <project path="device/xiaomi/dash" name="xiaomi-mt6991/device_xiaomi_dash" remote="gh" revision="bka" />
+  <project path="device/xiaomi/dash-miuicamera" name="xiaomi-mt6991/device_xiaomi_dash-miuicamera" remote="gh" revision="bka" />
+  <project path="vendor/xiaomi/dash" name="xiaomi-mt6991/vendor_xiaomi_dash" remote="gl" revision="bka" />
+  <project path="vendor/xiaomi/dash-miuicamera" name="xiaomi-mt6991/vendor_xiaomi_dash-miuicamera" remote="gl" revision="bka" />
   <project path="hardware/mediatek" name="xiaomi-mt6991/hardware_mediatek" remote="gh" revision="bka" />
   <project path="hardware/xiaomi" name="xiaomi-mt6991/hardware_xiaomi" remote="gh" revision="bka" />
-
-  <!-- Sepolicy -->
   <project path="device/mediatek/sepolicy_vndr" name="xiaomi-mt6991/device_mediatek_sepolicy_vndr" remote="gh" revision="bka" />
-
-  <!-- Vendor keys -->
   <project path="vendor/evolution-priv/keys" name="xiaomi-mt6991/vendor_evolution-priv_keys" remote="gh" revision="bka" />
-
-  <!-- Dolby -->
   <project path="packages/apps/LunarisDolby" name="xiaomi-mt6991/packages_apps_LunarisDolby" remote="gh" revision="bka" />
 
-  <!-- Patches -->
   <remove-project name="LineageOS/android_external_wpa_supplicant_8" />
   <project path="external/wpa_supplicant_8" name="xiaomi-mt6991/external_wpa_supplicant_8" remote="gh" revision="bka" />
   <remove-project name="LineageOS/android_hardware_nxp_nfc" />
