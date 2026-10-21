@@ -34,11 +34,11 @@
   <project path="kernel/xiaomi/dash/build/bazel_mgk_rules" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2" />
   <project path="kernel/xiaomi/dash/vendor/mediatek/kernel_modules" name="Content-Creation-Club/android_kernel_xiaomi_dash_mtk_modules" remote="gh" revision="dash-w-oss" />
 
-  <!-- Required symlinks inside Kleaf workspace -->
-  <project path="kernel/xiaomi/dash/WORKSPACE" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2">
+  <!-- Required symlinks at repo root for Kleaf workspace -->
+  <project path="WORKSPACE" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2">
     <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
   </project>
-  <project path="kernel/xiaomi/dash/.bazelrc" name="Content-Creation-Club/android_kernel_xiaomi_dash_build" remote="gh" revision="dash-w-oss">
+  <project path=".bazelrc" name="Content-Creation-Club/android_kernel_xiaomi_dash_build" remote="gh" revision="dash-w-oss">
     <linkfile src="kleaf/common.bazelrc" dest=".bazelrc" />
   </project>
 
