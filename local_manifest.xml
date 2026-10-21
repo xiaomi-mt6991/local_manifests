@@ -8,6 +8,7 @@
   <!-- Platform build/kernel (Kleaf tooling) -->
   <project path="build/kernel" name="kernel/build" remote="aosp" revision="main" groups="ddk">
     <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
+    <linkfile src="kleaf/common.bazelrc" dest=".bazelrc" />
   </project>
 
   <!-- Missing prebuilts -->
@@ -31,16 +32,11 @@
   <project path="kernel/xiaomi/dash/kernel-6.6" name="Content-Creation-Club/android_kernel_xiaomi_dash" remote="gh" revision="dash-w-oss" />
   <project path="kernel/xiaomi/dash/kernel_device_modules-6.6" name="Content-Creation-Club/android_kernel_xiaomi_dash_device_modules" remote="gh" revision="dash-w-oss" />
   <project path="kernel/xiaomi/dash/build/kernel" name="Content-Creation-Club/android_kernel_xiaomi_dash_build" remote="gh" revision="dash-w-oss" />
-  <project path="kernel/xiaomi/dash/build/bazel_mgk_rules" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2" />
-  <project path="kernel/xiaomi/dash/vendor/mediatek/kernel_modules" name="Content-Creation-Club/android_kernel_xiaomi_dash_mtk_modules" remote="gh" revision="dash-w-oss" />
-
-  <!-- Required symlinks at repo root for Kleaf workspace -->
-  <project path="WORKSPACE" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2">
+  <project path="kernel/xiaomi/dash/build/bazel_mgk_rules" name="Content-Creation-Club/android_kernel_xiaomi_dash_bazel_mgk_rules" remote="gh" revision="lineage-23.2">
     <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
-  </project>
-  <project path=".bazelrc" name="Content-Creation-Club/android_kernel_xiaomi_dash_build" remote="gh" revision="dash-w-oss">
     <linkfile src="kleaf/common.bazelrc" dest=".bazelrc" />
   </project>
+  <project path="kernel/xiaomi/dash/vendor/mediatek/kernel_modules" name="Content-Creation-Club/android_kernel_xiaomi_dash_mtk_modules" remote="gh" revision="dash-w-oss" />
 
   <!-- Prebuilt kernel modules (fallback) -->
   <project path="device/xiaomi/dash-kernel" name="xiaomi-mt6991/device_xiaomi_dash-kernel" remote="gh" revision="cnb" />
